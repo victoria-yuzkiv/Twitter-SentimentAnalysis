@@ -31,8 +31,22 @@ Cleaned data is being saved to cleaned_data.csv.
 Moreover, in the file *tweet_preprocessing.py* I created a class PreprocessTweet that allows to perform all the operations listed above.
 
 ## Step 2:  Feature selection
+
+The code of this step can be found in *Feature selection.ipynb*.
+
  Before training the model, I decided to compare feature extraction methods and choose the best one. I compared two methods: **Count Vectorizer** and 
 **TFIDF Vectorizer**. Results:
 
 ![Feature selection](https://github.com/victoria-yuzkiv/Twitter-SentimentAnalysis/blob/master/FeatureSelection.PNG?raw=true)
 
+Trigram for TFIDF Vectorizer showed the best result, so I'll use it to train the model.
+
+## Step 4: Using Twitter Streaming API
+
+The code of this step can be found in *Receiving tweets from TwitterStreamingAPI.ipynb*.
+
+I received 320 tweets about Ukraine and saved into *received_tweets.csv*. Unfortunately, I can perform sentiment analysis only for tweets on English, so later I'll filter tweets written on the other languages.
+
+## Step 5: Predicting polarity of tweets about Ukraine
+
+I used logistic regression to train the model and then predicted polarity of received tweets. Experiment showed that 87% of tweets are positive and only 13% - negative.
