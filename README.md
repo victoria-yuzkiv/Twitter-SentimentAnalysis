@@ -41,12 +41,12 @@ The code of this step can be found in *Feature selection.ipynb*.
 
 Trigram for TFIDF Vectorizer showed the best result, so I'll use it to train the model.
 
-## Step 4: Using Twitter Streaming API
+## Step 3: Using Twitter Streaming API
 
 The code of this step can be found in *Receiving tweets from TwitterStreamingAPI.ipynb*.
 
 I received 320 tweets about Ukraine and saved into *received_tweets.csv*. Unfortunately, I can perform sentiment analysis only for tweets on English, so later I'll filter tweets written on the other languages.
 
-## Step 5: Predicting polarity of tweets about Ukraine
+## Step 4: Predicting polarity of tweets about Ukraine
 
 I used logistic regression to train the model and then predicted polarity of received tweets. Experiment showed that 87% of tweets are positive and only 13% - negative.
