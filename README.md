@@ -39,14 +39,20 @@ The code of this step can be found in *Feature selection.ipynb*.
 
 ![Feature selection](https://github.com/victoria-yuzkiv/Twitter-SentimentAnalysis/blob/master/FeatureSelection.PNG?raw=true)
 
+To compare these methods, we should understand: Count Vectorizer just counts the word frequencies. Simple as that. But with the TFIDF Vectorizer the value increases proportionally to count, but is offset by the frequency of the word in the corpus.
+From the graph above we can see that both bigram and trigram Count Vectorizer perform better for fewer features (less than 3000).
+
 Trigram for TFIDF Vectorizer showed the best result, so I'll use it to train the model.
+
 
 ## Step 3: Using Twitter Streaming API
 
 The code of this step can be found in *Receiving tweets from TwitterStreamingAPI.ipynb*.
 
-I received 320 tweets about Ukraine and saved into *received_tweets.csv*. Unfortunately, I can perform sentiment analysis only for tweets on English, so later I'll filter tweets written on the other languages.
+I received 320 tweets about Ukraine (number of tweets user can receive per one time is limited because of run time limitation) and saved into *received_tweets.csv*. I took into account tweet's language and location (to be able to perform data analysis). 
 
 ## Step 4: Predicting polarity of tweets about Ukraine
 
 I used logistic regression to train the model and then predicted polarity of received tweets. Experiment showed that 87% of tweets are positive and only 13% - negative.
+
+As a result, using Twitter Streaming API we can get tweets about any topic we are interested in and using trained model we can get their polarity and make the statistics.
